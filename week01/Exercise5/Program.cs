@@ -7,8 +7,10 @@ class Program
     {
         displayMessage();
 
+       
         string userName = "";
-        displayPersonalMessage(userName);
+        userName = displayPersonalMessage(userName);
+        
 
         int number = 0;
         number = favoriteNumber(number);
