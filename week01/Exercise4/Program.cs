@@ -10,7 +10,7 @@ class Program
         Console.WriteLine("Enter 0 to quit.");
         while (userNumber != 0)
         {
-            Console.Write("Enter a number (0 to quit): ");
+            Console.Write("Enter negative and positive numbers (0 to quit): ");
         
             userNumber = Convert.ToInt32(Console.ReadLine());
             if (userNumber != 0)
@@ -37,5 +37,23 @@ class Program
             }
         }
         Console.WriteLine($"Maximum: {max}");
+
+        int smallestPositive = int.MaxValue;
+        foreach (int number in numbers)
+        {
+            if (number > 0 && number < smallestPositive)
+            {
+                smallestPositive = number;
+            }
+        }
+        Console.WriteLine($"Smallest Positive: {smallestPositive}");
+
+        numbers.Sort();
+        Console.WriteLine("Sorted Numbers: ");
+        foreach (int number in numbers)
+        {
+            Console.Write($"{number} ");
+        }
+        Console.WriteLine();
     }
 }
