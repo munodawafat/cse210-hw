@@ -32,29 +32,49 @@ class Program
         {
             letter = "F";
         }
-            int last_digit = (int)percent % 10;
+            int lastDigit = percent % 10;
 
-            if (last_digit >= 7)
+            if (letter == "B" && lastDigit > 7)
             {
                 sign = "+";
             }
-            else if (last_digit < 3)
+            else if (letter == "C" && lastDigit > 7)
+            {
+                sign = "+";
+            }
+            else if (letter == "D" && lastDigit > 7)
+            {
+                sign = "+";
+            }
+            if (letter == "A" && lastDigit > 3)
+            {
+                sign = "";
+            }
+            else if (letter == "F")
+            {
+                sign = "";
+            }
+            else if (letter == "D" && lastDigit < 3)
+            {
+               sign = "-";
+            }
+            else if (letter == "C" && lastDigit < 3)
             {
                 sign = "-";
             }
-            if (percent >= 93)
+            else if (letter == "B" && lastDigit < 3)
             {
-                sign = "";
+                sign = "-";
             }
-            if (percent < 60)
+            else if (letter == "A" && lastDigit < 3)
             {
-                sign = "";
+                sign = "-";
             }
             else
             {
                 sign = "";
             }
-        Console.WriteLine($" Your grade is: {letter}{sign}");
+            Console.WriteLine($"Your grade is: {letter}{sign}");
 
         if (percent >= 70)
         {
