@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public class Video
@@ -10,10 +11,15 @@ public class Video
 
     public Video(string title, string author, int length)
     {
-        title = _Title;
-        author = _Author;
-        length = _Length;
+        _Title = title;
+        _Author = author;
+        _Length = length;
         Comments = new List<Comment>();
+    }
+
+    public void AddComment(Comment comment)
+    {
+        Comments.Add(comment);
     }
     public int GetCommentCount()
     {

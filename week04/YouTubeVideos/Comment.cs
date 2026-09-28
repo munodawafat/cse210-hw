@@ -4,7 +4,7 @@ public class Comment
     public string _Text {get; set;}
     public Comment(string name, string text)
     {
-        name = _Name;
-        text = _Text;
+        _Name = name;
+        _Text = text;
     }
   }
