@@ -14,7 +14,7 @@ public class ReflectingActivity : Activity
     {
         return "";
     }
-    public string GetRandomQoestion()
+    public string GetRandomQuestion()
     {
         return "";
     }
