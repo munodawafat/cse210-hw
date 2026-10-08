@@ -17,15 +17,20 @@ public class GoalManager
             _Goals.Add(goal);
         }
 
-        public void RecordEvent(int index)
+    public int GetPoints(int index)
+    {
+        return _Goals[index].RecordEvent();
+    }
+
+    public void RecordEvent(int index, int points)
         {
             if (index >= 0 && index < _Goals.Count)
             {
                 Console.WriteLine("Invalid number");
                 return;
             }
-            int points = _Goals[index].RecordEvent();
-            if (points == 0)
+
+        if (points == 0)
             {
                 Console.WriteLine("No points earned.");
             }

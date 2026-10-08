@@ -35,7 +35,7 @@ partial class Program
                 manager.DisplayGoals();
                 Console.Write("Which goal did you accomplish? ");
                 int index = int.Parse(Console.ReadLine()) - 1;
-                manager.RecordEvent(index);
+                manager.RecordEvent(index, manager.GetPoints(index));
             }
             else if (choice == "4")
             {

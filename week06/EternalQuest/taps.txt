@@ -1,0 +1,2 @@
+0
+SimpleGoal:take a bath:bath:50:False
