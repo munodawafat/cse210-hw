@@ -1,33 +1,44 @@
+using System.Drawing;
+
 public class ChecklistGoal : Goal
 {
-    private int _amountCompleted;
-    private int _target;
-    private int _bonus;
+    private int _AmountCompleted;
+    private int _Target;
+    private int _Bonus;
+   
 
-    public ChecklistGoal()
+    public ChecklistGoal(string name, string description, int points, int target, int bonus, int amountCompleted = 0) : base(name, description, points)
     {
-        _amountCompleted = 0;
-        _target = 0;
-        _bonus = 0;
+        _Target = target;
+        _Bonus = bonus;
+        _AmountCompleted = amountCompleted;
     }
-
     public override int RecordEvent()
     {
-        return 0;
-    }
-
+        if (_AmountCompleted >= _Target)
+        {
+            return 0;
+        }
+        _AmountCompleted++;
+        
+        if (_AmountCompleted == _Target)
+        {
+            return _Points + _Bonus;
+        }
+    }    
     public override bool IsComplete()
     {
-        return false;
+        return _AmountCompleted >= _Target;
     }
 
     public override string GetDetailsString()
     {
-        return "";
+        String box = IsComplete() ? "[x]" : "[ ]";
+        return $"{box}  Completed {_AmountCompleted}/{_Target} times.";
     }
 
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"ChecklistGoal:{_Name}, {_Description}, {_Points}, {_Target}, {_AmountCompleted}, {_AmountCompleted}/{_Target},{_Bonus}";
     }
 }
