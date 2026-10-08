@@ -19,13 +19,17 @@ public class ChecklistGoal : Goal
         {
             return 0;
         }
+
         _AmountCompleted++;
-        
+
         if (_AmountCompleted == _Target)
         {
             return _Points + _Bonus;
         }
-    }    
+
+        return _Points;
+    }
+
     public override bool IsComplete()
     {
         return _AmountCompleted >= _Target;
