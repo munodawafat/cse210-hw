@@ -17,6 +17,7 @@ public abstract class Activity
 
     public void DisplaySummary()
     {
+        Console.WriteLine($"Name: {this.GetType().Name}");
         Console.WriteLine($"Date: {_date}");
         Console.WriteLine($"Length: {_length} minutes");
         Console.WriteLine($"Distance: {GetDistance()} miles");
